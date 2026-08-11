@@ -1,0 +1,216 @@
+
+/* =========================================
+   KATH-UP — NAVBAR
+========================================= */
+
+.navbar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 7%;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #f0e4e8;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  color: #191316;
+
+  text-decoration: none;
+
+  font-size: 1.8rem;
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: #f05a7e;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 32px;
+}
+
+.nav-links a {
+  color: #332a2e;
+
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #f05a7e;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   PANIER
+========================================= */
+
+.cart-icon {
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #191316;
+
+  font-size: 1.25rem;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+  color: #f05a7e;
+
+  transform: translateY(-2px);
+}
+
+
+/* BADGE */
+
+.cart-badge {
+  position: absolute;
+
+  top: -3px;
+  right: -3px;
+
+  min-width: 19px;
+  height: 19px;
+
+  padding: 2px 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f05a7e;
+
+  color: #ffffff;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   BOUTON DÉCOUVRIR
+========================================= */
+
+.nav-button {
+  padding: 11px 20px;
+
+  border-radius: 25px;
+
+  background: #f05a7e;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #ff7595;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(240, 90, 126, 0.25);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .navbar {
+    padding: 15px 5%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-actions {
+    gap: 10px;
+  }
+
+  .nav-button {
+    padding: 9px 15px;
+
+    font-size: 0.8rem;
+  }
+
+}
+

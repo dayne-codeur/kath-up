@@ -1,0 +1,587 @@
+/* =========================================
+   KATH-UP — HOME
+========================================= */
+
+.home {
+  background: #fff8fa;
+  color: #171217;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.home-hero {
+  position: relative;
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 80px 8%;
+
+  background:
+    url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1800&q=90")
+    center / cover;
+
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(255, 226, 235, 0.82) 48%,
+      rgba(255, 105, 145, 0.28) 100%
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 720px;
+}
+
+.hero-kicker {
+  color: #d9004f;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  margin: 0 0 25px;
+
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 0.9;
+
+  color: #111;
+  letter-spacing: -5px;
+}
+
+.hero-content h1 span {
+  color: #e90055;
+}
+
+.hero-description {
+  max-width: 600px;
+
+  color: #493e43;
+  font-size: 1.1rem;
+  line-height: 1.8;
+
+  margin-bottom: 35px;
+}
+
+
+/* =========================================
+   BOUTONS HERO
+========================================= */
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 27px;
+
+  border-radius: 50px;
+
+  font-weight: 800;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background: #e90055;
+  color: white;
+
+  box-shadow: 0 12px 30px rgba(233, 0, 85, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  background: #c90048;
+
+  box-shadow: 0 18px 40px rgba(233, 0, 85, 0.35);
+}
+
+.btn-secondary {
+  background: white;
+  color: #111;
+
+  border: 2px solid #111;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-5px);
+  background: #111;
+  color: white;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.home-intro {
+  padding: 100px 8% 70px;
+
+  text-align: center;
+}
+
+.intro-text {
+  max-width: 780px;
+  margin: auto;
+}
+
+.section-subtitle {
+  color: #e90055;
+
+  font-size: 0.75rem;
+  font-weight: 900;
+
+  letter-spacing: 4px;
+}
+
+.intro-text h2,
+.universe-header h2,
+.showcase-content h2,
+.home-cta h2 {
+  margin: 12px 0 20px;
+
+  color: #111;
+
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.intro-text h2 span,
+.universe-header h2 span,
+.showcase-content h2 span,
+.home-cta h2 span {
+  color: #e90055;
+}
+
+.intro-text > p:last-child {
+  max-width: 650px;
+  margin: auto;
+
+  color: #71666c;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   UNIVERS KATH-UP
+========================================= */
+
+.beauty-universe {
+  padding: 70px 6% 110px;
+}
+
+.universe-header {
+  max-width: 750px;
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+.universe-header > p:last-child {
+  color: #71666c;
+  line-height: 1.8;
+}
+
+.universe-grid {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =========================================
+   CARTES
+========================================= */
+
+.universe-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  min-height: 300px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: white;
+
+  border: 1px solid #f1dce3;
+
+  text-decoration: none;
+
+  box-shadow: 0 10px 30px rgba(60, 20, 35, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.universe-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 25px 55px rgba(80, 20, 45, 0.14);
+}
+
+.universe-image {
+  height: 100%;
+  overflow: hidden;
+}
+
+.universe-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.universe-card:hover .universe-image img {
+  transform: scale(1.08);
+}
+
+.universe-content {
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.universe-content > span {
+  color: #e90055;
+
+  font-size: 0.75rem;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+}
+
+.universe-content h3 {
+  color: #111;
+
+  font-size: 1.6rem;
+
+  margin-bottom: 12px;
+}
+
+.universe-content p {
+  color: #756a70;
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+}
+
+.universe-content strong {
+  color: #e90055;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================================
+   SHOWCASE
+========================================= */
+
+.home-showcase {
+  max-width: 1200px;
+
+  margin: 20px auto 110px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background: #111;
+
+  border-radius: 35px;
+
+  overflow: hidden;
+}
+
+.showcase-image {
+  min-height: 600px;
+}
+
+.showcase-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.showcase-content {
+  padding: 65px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.showcase-content h2 {
+  color: white;
+}
+
+.showcase-content h2 span {
+  color: #ff4f8a;
+}
+
+.showcase-content > p:not(.section-subtitle) {
+  color: #c8bdc2;
+
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================================
+   LISTE RÉCAPITULATIVE
+========================================= */
+
+.showcase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  margin-bottom: 35px;
+}
+
+.showcase-list div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  color: #fff;
+}
+
+.showcase-list b {
+  color: #ff4f8a;
+  font-size: 1.2rem;
+}
+
+.showcase-list span {
+  color: #ddd0d5;
+}
+
+
+/* =========================================
+   BOUTON CATALOGUE
+========================================= */
+
+.showcase-button {
+  align-self: flex-start;
+
+  padding: 16px 25px;
+
+  border-radius: 50px;
+
+  background: #ff0a63;
+  color: white;
+
+  text-decoration: none;
+  font-weight: 800;
+
+  transition: 0.3s ease;
+}
+
+.showcase-button:hover {
+  transform: translateY(-4px);
+
+  background: #ff3c83;
+
+  box-shadow:
+    0 15px 35px rgba(255, 10, 99, 0.3);
+}
+
+
+/* =========================================
+   CTA FINAL
+========================================= */
+
+.home-cta {
+  padding: 110px 6%;
+
+  text-align: center;
+
+  background:
+  linear-gradient(
+    135deg,
+    #d98298,
+    #c96f87,
+    #b85f78
+  );
+
+  color: white;
+}
+
+.home-cta .section-subtitle {
+  color: #ffd9e5;
+}
+
+.home-cta h2 {
+  color: white;
+}
+
+.home-cta h2 span {
+  color: #fff;
+}
+
+.home-cta > p:not(.section-subtitle) {
+  max-width: 600px;
+
+  margin: 0 auto 30px;
+
+  color: #ffe8ef;
+
+  line-height: 1.8;
+}
+
+.cta-button {
+  display: inline-flex;
+
+  padding: 17px 30px;
+
+  border-radius: 50px;
+
+  background: white;
+  color: #d9004f;
+
+  text-decoration: none;
+
+  font-weight: 900;
+
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px) scale(1.03);
+
+  box-shadow:
+    0 18px 40px rgba(70, 0, 25, 0.25);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .home-hero {
+    min-height: 600px;
+  }
+
+  .universe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-showcase {
+    grid-template-columns: 1fr;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .showcase-image {
+    min-height: 400px;
+  }
+
+  .showcase-content {
+    padding: 45px 30px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .home-hero {
+    min-height: 600px;
+    padding: 70px 6%;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+    letter-spacing: -3px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    text-align: center;
+  }
+
+  .home-intro {
+    padding: 70px 6% 50px;
+  }
+
+  .beauty-universe {
+    padding: 50px 5% 70px;
+  }
+
+  .universe-card {
+    grid-template-columns: 1fr;
+  }
+
+  .universe-image {
+    height: 240px;
+  }
+
+  .universe-content {
+    padding: 25px;
+  }
+
+  .home-showcase {
+    border-radius: 25px;
+  }
+
+  .showcase-image {
+    min-height: 300px;
+  }
+
+  .showcase-content {
+    padding: 40px 25px;
+  }
+
+  .home-cta {
+    padding: 80px 6%;
+  }
+}

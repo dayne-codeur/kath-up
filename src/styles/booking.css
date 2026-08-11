@@ -1,0 +1,474 @@
+/* =========================================
+   KATH-UP — BOOKING VIF & PREMIUM
+========================================= */
+
+.booking-hero {
+  min-height: 500px;
+  padding: 80px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 105, 145, 0.96) 0%,
+      rgba(255, 151, 177, 0.88) 45%,
+      rgba(255, 225, 233, 0.65) 100%
+    ),
+    url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e")
+    center / cover;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-hero::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: 5%;
+  top: -100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.booking-hero .section-subtitle,
+.booking-hero h1,
+.booking-hero > p:last-child {
+  position: relative;
+  z-index: 2;
+}
+
+.booking-hero .section-subtitle {
+  color: #b40043;
+  letter-spacing: 4px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.booking-hero h1 {
+  max-width: 850px;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.95;
+  color: #111;
+  margin-bottom: 25px;
+}
+
+.booking-hero h1 span {
+  color: #e90055;
+}
+
+.booking-hero > p:last-child {
+  max-width: 650px;
+  color: #30242a;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.booking-section {
+  padding: 80px 6%;
+  background: #fff7fa;
+}
+
+.booking-container {
+  width: min(1200px, 100%);
+  margin: auto;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.booking-intro {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.booking-intro .section-subtitle,
+.booking-form-title .section-subtitle {
+  color: #e90055;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.booking-intro h2,
+.booking-form-title h2 {
+  color: #111;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 10px 0 15px;
+}
+
+.booking-intro p:last-child {
+  color: #6d6066;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 60px;
+}
+
+.service-card {
+  min-height: 180px;
+  padding: 28px;
+  text-align: left;
+
+  border: 2px solid #f0d7df;
+  border-radius: 22px;
+
+  background: #fff;
+  color: #111;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: #e90055;
+  box-shadow: 0 18px 35px rgba(233, 0, 85, 0.15);
+}
+
+.service-card.selected {
+  background: linear-gradient(135deg, #ff0a63, #d9004f);
+  border-color: #ff0a63;
+  color: #fff;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(217, 0, 79, 0.3);
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: #888;
+  margin-bottom: 18px;
+}
+
+.service-card.selected p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.service-card strong {
+  font-size: 1rem;
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.booking-options {
+  padding: 40px;
+  margin-bottom: 50px;
+
+  background: #fff;
+  border-radius: 26px;
+  border: 1px solid #f0d7df;
+
+  box-shadow: 0 15px 45px rgba(80, 20, 40, 0.07);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.option-card {
+  padding: 18px 22px;
+
+  background: #fff;
+  border: 2px solid #f0d7df;
+  border-radius: 17px;
+
+  color: #222;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.option-card:hover {
+  border-color: #ff0a63;
+  color: #e90055;
+  transform: translateY(-3px);
+}
+
+.option-card.selected {
+  background: #ffe1eb;
+  border-color: #ff0a63;
+  color: #d9004f;
+}
+
+
+/* =========================================
+   FORMULAIRE
+========================================= */
+
+.booking-form {
+  padding: 45px;
+
+  background: #fff;
+  border-radius: 28px;
+
+  border: 1px solid #f0d7df;
+
+  box-shadow: 0 20px 60px rgba(80, 20, 40, 0.08);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #222;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px;
+
+  border: 2px solid #ead9df;
+  border-radius: 14px;
+
+  background: #fff;
+  color: #222;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff0a63;
+  box-shadow: 0 0 0 4px rgba(255, 10, 99, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.inspiration-upload {
+  padding: 25px;
+
+  border: 2px dashed #ff8caf;
+  border-radius: 20px;
+
+  background: #fff5f8;
+}
+
+.inspiration-upload label {
+  color: #d9004f;
+}
+
+.inspiration-upload p {
+  color: #777;
+  margin-top: 8px;
+}
+
+.inspiration-preview {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 18px;
+  padding: 12px;
+
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #f0d7df;
+}
+
+.inspiration-preview img {
+  width: 95px;
+  height: 95px;
+
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.inspiration-preview span {
+  font-weight: 700;
+  color: #333;
+  word-break: break-word;
+}
+
+
+/* =========================================
+   RÉCAPITULATIF
+========================================= */
+
+.booking-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+
+  margin: 30px 0;
+  padding: 25px;
+
+  background: #fff0f5;
+  border: 2px solid #ffd0dc;
+  border-radius: 20px;
+}
+
+.booking-summary div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.booking-summary span {
+  color: #806e76;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.booking-summary strong {
+  color: #d9004f;
+  font-size: 1rem;
+}
+
+
+/* =========================================
+   WHATSAPP
+========================================= */
+
+.booking-submit {
+  width: 100%;
+  padding: 19px 25px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #ff0a63, #d9004f);
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow: 0 12px 30px rgba(217, 0, 79, 0.3);
+
+  transition: 0.3s ease;
+}
+
+.booking-submit:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(217, 0, 79, 0.4);
+}
+
+.booking-submit:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.booking-message {
+  margin-top: 18px;
+  padding: 15px;
+
+  border-radius: 14px;
+
+  background: #ffe5ee;
+  color: #c00048;
+
+  text-align: center;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-form,
+  .booking-options {
+    padding: 30px 22px;
+  }
+
+  .booking-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .booking-hero {
+    min-height: 430px;
+    padding: 70px 6%;
+  }
+
+  .booking-hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .services-grid,
+  .options-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-section {
+    padding: 60px 5%;
+  }
+
+  .booking-form,
+  .booking-options {
+    padding: 25px 18px;
+  }
+}
