@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ProductCard from "../components/ProductCard";
-
+import "../styles/shop.css";
 const products = [
   {
     id: 1,

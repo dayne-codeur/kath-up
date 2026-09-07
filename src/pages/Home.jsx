@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/home.css";
 
 function Home() {
@@ -25,13 +26,13 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <a href="/shop" className="btn btn-primary">
+            <Link to="/shop" className="btn btn-primary">
               Découvrir la boutique
-            </a>
+            </Link>
 
-            <a href="/booking" className="btn btn-secondary">
+            <Link to="/booking" className="btn btn-secondary">
               Réserver un moment
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -65,7 +66,7 @@ function Home() {
 
         <div className="universe-header">
           <p className="section-subtitle">
-            Notre univers 
+            Notre univers
           </p>
 
           <h2>
@@ -83,7 +84,10 @@ function Home() {
         <div className="universe-grid">
 
           {/* MAKE-UP */}
-          <a href="/shop" className="universe-card universe-makeup">
+          <Link
+            to="/shop"
+            className="universe-card universe-makeup"
+          >
             <div className="universe-image">
               <img
                 src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=85"
@@ -100,11 +104,14 @@ function Home() {
               </p>
               <strong>Découvrir →</strong>
             </div>
-          </a>
+          </Link>
 
 
           {/* ONGLERIE */}
-          <a href="/booking" className="universe-card universe-nails">
+          <Link
+            to="/booking"
+            className="universe-card universe-nails"
+          >
             <div className="universe-image">
               <img
                 src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85"
@@ -121,11 +128,14 @@ function Home() {
               </p>
               <strong>Réserver →</strong>
             </div>
-          </a>
+          </Link>
 
 
           {/* SOINS */}
-          <a href="/shop" className="universe-card universe-care">
+          <Link
+            to="/shop"
+            className="universe-card universe-care"
+          >
             <div className="universe-image">
               <img
                 src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=85"
@@ -142,11 +152,14 @@ function Home() {
               </p>
               <strong>Explorer →</strong>
             </div>
-          </a>
+          </Link>
 
 
           {/* KITS */}
-          <a href="/shop" className="universe-card universe-kits">
+          <Link
+            to="/shop"
+            className="universe-card universe-kits"
+          >
             <div className="universe-image">
               <img
                 src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85"
@@ -163,7 +176,7 @@ function Home() {
               </p>
               <strong>Voir les kits →</strong>
             </div>
-          </a>
+          </Link>
 
         </div>
 
@@ -229,9 +242,12 @@ function Home() {
 
           </div>
 
-          <a href="/catalogue" className="showcase-button">
+          <Link
+            to="/catalogue"
+            className="showcase-button"
+          >
             Voir le catalogue
-          </a>
+          </Link>
 
         </div>
 
@@ -255,9 +271,12 @@ function Home() {
           beauté avec Kath-Up.
         </p>
 
-        <a href="/booking" className="cta-button">
+        <Link
+          to="/booking"
+          className="cta-button"
+        >
           Prendre rendez-vous
-        </a>
+        </Link>
 
       </section>
 
