@@ -1,281 +1,112 @@
-import { useState } from "react";
-import "./catalogue.css";
-const catalogProducts = [
-  {
-    id: 1,
-    name: "Fond de teint Glow",
-    category: "Make-up",
-    price: 24.99,
-    image:
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9",
-  },
-  {
-    id: 2,
-    name: "Gloss Ultra Shine",
-    category: "Make-up",
-    price: 14.99,
-    image:
-      "https://images.unsplash.com/photo-1586495777744-4413f21062fa",
-  },
-  {
-    id: 3,
-    name: "Palette Nude Elegance",
-    category: "Make-up",
-    price: 34.99,
-    image:
-      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796",
-  },
-  {
-    id: 4,
-    name: "Blush Rosé Naturel",
-    category: "Make-up",
-    price: 18.99,
-    image:
-      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796",
-  },
-  {
-    id: 5,
-    name: "Mascara Volume Intense",
-    category: "Make-up",
-    price: 16.99,
-    image:
-      "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92",
-  },
-  {
-    id: 6,
-    name: "Rouge à Lèvres Velvet",
-    category: "Make-up",
-    price: 17.99,
-    image:
-      "https://images.unsplash.com/photo-1586495777744-4413f21062fa",
-  },
-  {
-    id: 7,
-    name: "Kit Manucure Premium",
-    category: "Onglerie",
-    price: 39.99,
-    image:
-      "https://images.unsplash.com/photo-1610992015732-2449b76344bc",
-  },
-  {
-    id: 8,
-    name: "Vernis Gel Collection",
-    category: "Onglerie",
-    price: 22.99,
-    image:
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371",
-  },
-  {
-    id: 9,
-    name: "Kit Nail Art Créatif",
-    category: "Onglerie",
-    price: 32.99,
-    image:
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371",
-  },
-  {
-    id: 10,
-    name: "Top Coat Brillance",
-    category: "Onglerie",
-    price: 13.99,
-    image:
-      "https://images.unsplash.com/photo-1610992015732-2449b76344bc",
-  },
-  {
-    id: 11,
-    name: "Sérum Éclat",
-    category: "Soins & cosmétiques",
-    price: 29.99,
-    image:
-      "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8",
-  },
-  {
-    id: 12,
-    name: "Huile Nourrissante",
-    category: "Soins & cosmétiques",
-    price: 19.99,
-    image:
-      "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b",
-  },
-  {
-    id: 13,
-    name: "Crème Hydratante Glow",
-    category: "Soins & cosmétiques",
-    price: 25.99,
-    image:
-      "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8",
-  },
-  {
-    id: 14,
-    name: "Nettoyant Visage Doux",
-    category: "Soins & cosmétiques",
-    price: 21.99,
-    image:
-      "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b",
-  },
-  {
-    id: 15,
-    name: "Masque Visage Éclat",
-    category: "Soins & cosmétiques",
-    price: 23.99,
-    image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881",
-  },
-  {
-    id: 16,
-    name: "Beauty Box Kath-Up",
-    category: "Kits beauté",
-    price: 59.99,
-    image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348",
-  },
-  {
-    id: 17,
-    name: "Kit Débutante Make-up",
-    category: "Kits beauté",
-    price: 49.99,
-    image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348",
-  },
-  {
-    id: 18,
-    name: "Kit Glow & Skincare",
-    category: "Kits beauté",
-    price: 69.99,
-    image:
-      "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8",
-  },
-  {
-    id: 19,
-    name: "Kit Beauty Essentials",
-    category: "Kits beauté",
-    price: 79.99,
-    image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348",
-  },
-];
+import React, { useState } from "react";
+import { useCart } from "../context/CartContext";
 
-const categories = [
-  "Tous",
-  "Make-up",
-  "Onglerie",
-  "Soins & cosmétiques",
-  "Kits beauté",
-];
+export default function Catalogue() {
+  const { addToCart } = useCart();
+  const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("Tous");
 
-function Catalogue() {
-  const [activeCategory, setActiveCategory] = useState("Tous");
-  const [searchTerm, setSearchTerm] = useState("");
+  const products = [
+    { id: "fond-de-teint-glow", name: "Fond de teint Glow", price: 24.99, category: "SE MAQUILLER", image: "/images/fond-de-teint.jpg" },
+    { id: "brillance-ultra-brillante", name: "Brillance Ultra Brillante", price: 14.99, category: "SE MAQUILLER", image: "/images/brillance.jpg" },
+    { id: "palette-nude-elegance", name: "Palette Nude Élégance", price: 34.99, category: "SE MAQUILLER", image: "/images/palette.jpg" },
+    { id: "blush-rose-naturel", name: "Blush Rosé Naturel", price: 18.99, category: "SE MAQUILLER", image: "/images/blush.jpg" },
+    { id: "mascara-volume-intense", name: "Mascara Volume Intense", price: 16.99, category: "SE MAQUILLER", image: "/images/mascara.jpg" },
+    { id: "rouge-a-levres-velvet", name: "Rouge à Lèvres Velvet", price: 17.99, category: "SE MAQUILLER", image: "/images/rouge.jpg" },
+    { id: "kit-fabrication-premium", name: "Kit de fabrication Premium", price: 39.99, category: "ONGLERIE", image: "/images/kit-ongles.jpg" },
+    { id: "collection-vernis-gel", name: "Collection Vernis Gel", price: 22.99, category: "ONGLERIE", image: "/images/vernis.jpg" },
+    { id: "kit-nail-art-creatif", name: "Kit Nail Art Créatif", price: 32.99, category: "ONGLERIE", image: "/images/nail-art.jpg" },
+    { id: "brillance-couche-finition", name: "Brillance de la couche de finition", price: 13.99, category: "ONGLERIE", image: "/images/finition.jpg" },
+    { id: "serum-eclat", name: "Sérum Éclat", price: 29.99, category: "SOINS ET COSMÉTIQUES", image: "/images/serum.jpg" },
+    { id: "huile-nourrissante", name: "Huile Nourrissante", price: 19.99, category: "SOINS ET COSMÉTIQUES", image: "/images/huile.jpg" },
+    { id: "creme-hydratante-eclat", name: "Crème Hydratante Éclat", price: 25.99, category: "SOINS ET COSMÉTIQUES", image: "/images/creme.jpg" },
+    { id: "nettoyant-visage-doux", name: "Nettoyant Visage Doux", price: 21.99, category: "SOINS ET COSMÉTIQUES", image: "/images/nettoyant.jpg" },
+    { id: "masque-visage-eclat", name: "Masque Visage Éclat", price: 23.99, category: "SOINS ET COSMÉTIQUES", image: "/images/masque.jpg" },
+    { id: "coffret-beaute-kath-up", name: "Coffret Beauté Kath-Up", price: 59.99, category: "KITS BEAUTÉ", image: "/images/coffret.jpg" },
+    { id: "kit-maquillage-debutantes", name: "Kit de maquillage pour débutantes", price: 49.99, category: "KITS BEAUTÉ", image: "/images/kit-maquillage.jpg" },
+    { id: "kit-glow-soins-peau", name: "Kit Glow & Soins de la peau", price: 69.99, category: "KITS BEAUTÉ", image: "/images/kit-glow.jpg" },
+    { id: "kit-beaute-essentiel", name: "Kit de beauté essentiel", price: 79.99, category: "KITS BEAUTÉ", image: "/images/kit-essentiel.jpg" }
+  ];
 
-  const filteredProducts = catalogProducts.filter((product) => {
+  const categories = ["Tous", "SE MAQUILLER", "ONGLERIE", "SOINS ET COSMÉTIQUES", "KITS BEAUTÉ"];
+
+  // Filtrage combiné (recherche + catégorie)
+  const filteredProducts = products.filter((product) => {
     const matchesCategory =
-      activeCategory === "Tous" ||
-      product.category === activeCategory;
-
-    const matchesSearch =
-      product.name
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase()) ||
-      product.category
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-
+      selectedCategory === "Tous" || product.category === selectedCategory;
+    const matchesSearch = product.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   return (
-    <main className="catalogue-page">
+    <div className="catalogue-page">
       <section className="catalogue-hero">
-        <p className="section-subtitle">KATH-UP BEAUTY</p>
-
-        <h1>
-          Notre <span>catalogue.</span>
-        </h1>
-
-        <p>
-          Explore toute notre sélection beauté : make-up,
-          onglerie, soins et kits beauté.
-        </p>
+        <span>KATH-UP BEAUTÉ</span>
+        <h1>Notre catalogue.</h1>
+        <p>Découvrez toute notre sélection beauté : maquillage, onglerie, soins et kits beauté.</p>
       </section>
 
       <section className="catalogue-tools">
+        {/* BARRE DE RECHERCHE */}
         <div className="catalogue-search">
           <span>🔍</span>
-
           <input
             type="text"
             placeholder="Rechercher dans le catalogue..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
-
-          {searchTerm && (
-            <button onClick={() => setSearchTerm("")}>
-              ×
-            </button>
+          {search && (
+            <button onClick={() => setSearch("")}>✕</button>
           )}
         </div>
 
+        {/* FILTRES CATEGORIES */}
         <div className="catalogue-categories">
-          {categories.map((category) => (
+          {categories.map((cat) => (
             <button
-              key={category}
-              className={
-                activeCategory === category ? "active" : ""
-              }
-              onClick={() => setActiveCategory(category)}
+              key={cat}
+              className={selectedCategory === cat ? "active" : ""}
+              onClick={() => setSelectedCategory(cat)}
             >
-              {category}
+              {cat === "Tous" ? "Tous" : cat.charAt(0) + cat.slice(1).toLowerCase()}
             </button>
           ))}
         </div>
       </section>
 
+      {/* LISTE DES PRODUITS */}
       <section className="catalogue-products">
         {filteredProducts.length > 0 ? (
           <div className="catalogue-grid">
             {filteredProducts.map((product) => (
-              <article
-                className="catalogue-card"
-                key={product.id}
-              >
+              <div key={product.id} className="catalogue-card">
                 <div className="catalogue-image">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                  />
+                  <img src={product.image} alt={product.name} />
                 </div>
-
                 <div className="catalogue-info">
                   <span>{product.category}</span>
-
                   <h3>{product.name}</h3>
-
                   <div className="catalogue-bottom">
-                    <strong>
-                      {product.price.toFixed(2)} €
-                    </strong>
-
-                    <button>
+                    <strong>{product.price.toFixed(2).replace(".", ",")} €</strong>
+                    <button onClick={() => addToCart(product)}>
                       Ajouter au panier
                     </button>
                   </div>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         ) : (
           <div className="catalogue-empty">
             <div>🔍</div>
             <h2>Aucun produit trouvé</h2>
-            <p>
-              Essaie une autre recherche ou une autre catégorie.
-            </p>
+            <p>Essayez de modifier votre recherche ou de changer de catégorie.</p>
           </div>
         )}
       </section>
-    </main>
+    </div>
   );
 }
-
-export default Catalogue;

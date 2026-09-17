@@ -8,9 +8,13 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+// 1. Import de votre CartProvider (ajustez le chemin selon votre dossier)
+import { CartProvider } from "./context/CartContext";
+
 function App() {
   return (
-    <>
+    // 2. Encapsulation globale
+    <CartProvider>
       <Navbar />
 
       <Routes>
@@ -21,9 +25,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
 
-      
       <Footer />
-    </>
+    </CartProvider>
   );
 }
 
