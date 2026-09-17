@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./catalogue.css";
 const catalogProducts = [
   {
     id: 1,

@@ -10,6 +10,10 @@ function Cart({ closeCart }) {
     cartTotal,
   } = useCart();
 
+  // Sécurisation des valeurs de repli
+  const currentCart = cart || [];
+  const numericTotal = typeof cartTotal === "number" && !isNaN(cartTotal) ? cartTotal : 0;
+
   return (
     <div className="cart-overlay" onClick={closeCart}>
       <aside className="cart-panel" onClick={(event) => event.stopPropagation()}>
@@ -20,12 +24,12 @@ function Cart({ closeCart }) {
             <h2>Mon panier</h2>
           </div>
 
-          <button className="cart-close" onClick={closeCart}>
+          <button className="cart-close" onClick={closeCart} aria-label="Fermer le panier">
             ×
           </button>
         </div>
 
-        {cart.length === 0 ? (
+        {currentCart.length === 0 ? (
           <div className="cart-empty">
             <div className="cart-empty-icon">🛒</div>
             <h3>Votre panier est vide</h3>
@@ -36,17 +40,17 @@ function Cart({ closeCart }) {
         ) : (
           <>
             <div className="cart-items">
-              {cart.map((item) => (
+              {currentCart.map((item) => (
                 <div className="cart-item" key={item.id}>
                   <div className="cart-item-image">
-                    <img src={item.image} alt={item.name} />
+                    <img src={item.image} alt={item.name || "Produit"} />
                   </div>
 
                   <div className="cart-item-info">
                     <h3>{item.name}</h3>
 
                     <p className="cart-item-price">
-                      {item.price} €
+                      {typeof item.price === "number" ? item.price.toFixed(2) : item.price} €
                     </p>
 
                     <div className="quantity-controls">
@@ -65,6 +69,7 @@ function Cart({ closeCart }) {
                   <button
                     className="remove-item"
                     onClick={() => removeFromCart(item.id)}
+                    aria-label="Supprimer l'article"
                   >
                     ×
                   </button>
@@ -75,7 +80,7 @@ function Cart({ closeCart }) {
             <div className="cart-footer">
               <div className="cart-total">
                 <span>Total</span>
-                <strong>{cartTotal.toFixed(2)} €</strong>
+                <strong>{numericTotal.toFixed(2)} €</strong>
               </div>
 
               <button className="checkout-button">

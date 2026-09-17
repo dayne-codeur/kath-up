@@ -1,0 +1,349 @@
+
+/* =========================================
+   KATH-UP — CATALOGUE
+========================================= */
+
+.catalogue-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff8fa;
+  padding-bottom: 80px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.catalogue-hero {
+  text-align: center;
+  padding: 70px 20px 45px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.catalogue-hero .section-subtitle {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #e85d75;
+  text-transform: uppercase;
+}
+
+.catalogue-hero h1 {
+  margin: 0 0 18px;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.1;
+  color: #2b2024;
+}
+
+.catalogue-hero h1 span {
+  color: #e85d75;
+}
+
+.catalogue-hero > p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #756970;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   OUTILS / RECHERCHE
+========================================= */
+
+.catalogue-tools {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto 40px;
+}
+
+.catalogue-search {
+  width: min(650px, 100%);
+  height: 52px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  background: #ffffff;
+  border: 1px solid #eadde1;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(70, 35, 45, 0.06);
+  box-sizing: border-box;
+}
+
+.catalogue-search span {
+  font-size: 18px;
+}
+
+.catalogue-search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #30262a;
+}
+
+.catalogue-search input::placeholder {
+  color: #aaa0a5;
+}
+
+.catalogue-search button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #f4e7ea;
+  color: #6d555e;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* =========================================
+   CATÉGORIES
+========================================= */
+
+.catalogue-categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.catalogue-categories button {
+  border: 1px solid #eadde1;
+  background: #ffffff;
+  color: #604f55;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.catalogue-categories button:hover {
+  border-color: #e85d75;
+  color: #e85d75;
+  transform: translateY(-2px);
+}
+
+.catalogue-categories button.active {
+  background: #e85d75;
+  border-color: #e85d75;
+  color: #ffffff;
+}
+
+/* =========================================
+   PRODUITS
+========================================= */
+
+.catalogue-products {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* =========================================
+   CARTE PRODUIT
+========================================= */
+
+.catalogue-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #eee1e5;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(70, 35, 45, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.catalogue-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(70, 35, 45, 0.12);
+}
+
+/* =========================================
+   IMAGES
+========================================= */
+
+.catalogue-image {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #f7eef1;
+}
+
+.catalogue-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.35s ease;
+}
+
+.catalogue-card:hover .catalogue-image img {
+  transform: scale(1.04);
+}
+
+/* =========================================
+   INFORMATIONS PRODUIT
+========================================= */
+
+.catalogue-info {
+  padding: 18px;
+}
+
+.catalogue-info > span {
+  display: block;
+  margin-bottom: 7px;
+  color: #e85d75;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.catalogue-info h3 {
+  margin: 0 0 18px;
+  min-height: 44px;
+  color: #2d2428;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+/* =========================================
+   PRIX + BOUTON
+========================================= */
+
+.catalogue-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.catalogue-bottom strong {
+  color: #2b2024;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.catalogue-bottom button {
+  border: none;
+  background: #2d2428;
+  color: #ffffff;
+  padding: 10px 13px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.catalogue-bottom button:hover {
+  background: #e85d75;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   AUCUN PRODUIT
+========================================= */
+
+.catalogue-empty {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.catalogue-empty > div {
+  margin-bottom: 15px;
+  font-size: 40px;
+}
+
+.catalogue-empty h2 {
+  margin: 0 0 10px;
+  color: #2d2428;
+}
+
+.catalogue-empty p {
+  margin: 0;
+  color: #756970;
+}
+
+/* =========================================
+   TABLETTE
+========================================= */
+
+@media (max-width: 1000px) {
+  .catalogue-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 720px) {
+  .catalogue-hero {
+    padding: 50px 20px 35px;
+  }
+
+  .catalogue-tools,
+  .catalogue-products {
+    width: min(100% - 28px, 550px);
+  }
+
+  .catalogue-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .catalogue-image {
+    height: 220px;
+  }
+
+  .catalogue-info {
+    padding: 14px;
+  }
+
+  .catalogue-info h3 {
+    font-size: 15px;
+  }
+
+  .catalogue-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .catalogue-bottom button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalogue-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalogue-image {
+    height: 280px;
+  }
+
+  .catalogue-categories {
+    justify-content: flex-start;
+  }
+}

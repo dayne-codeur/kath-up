@@ -1,4 +1,4 @@
-import "../styles/navbar.css";
+import "../App.css"; // Si tes styles généraux/navbar sont dans App.css ou ajustez le chemin exact avec la bonne casse
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -9,18 +9,15 @@ import { useCart } from "../context/CartContext";
 
 function Navbar() {
   const [cartOpen, setCartOpen] = useState(false);
-
   const { cartCount } = useCart();
 
   return (
     <>
       <header className="navbar">
-
         {/* LOGO */}
         <Link to="/" className="logo">
           Kath<span>-Up</span>
         </Link>
-
 
         {/* NAVIGATION */}
         <nav className="nav-links">
@@ -31,10 +28,8 @@ function Navbar() {
           <Link to="/contact">Contact</Link>
         </nav>
 
-
         {/* ACTIONS */}
         <div className="navbar-actions">
-
           {/* PANIER */}
           <button
             className="cart-icon"
@@ -42,34 +37,24 @@ function Navbar() {
             aria-label="Ouvrir le panier"
           >
             <FontAwesomeIcon icon={faShoppingBag} />
-
             {cartCount > 0 && (
-              <span className="cart-badge">
-                {cartCount}
-              </span>
+              <span className="cart-badge">{cartCount}</span>
             )}
           </button>
 
-
-          {/* BOUTON */}
+          {/* BOUTON DÉCOUVRIR */}
           <Link to="/shop" className="nav-button">
             Découvrir
           </Link>
-
         </div>
-
       </header>
 
-
-      {/* PANIER */}
+      {/* MODAL DU PANIER */}
       {cartOpen && (
-        <Cart
-          closeCart={() => setCartOpen(false)}
-        />
+        <Cart closeCart={() => setCartOpen(false)} />
       )}
     </>
   );
 }
 
 export default Navbar;
-
