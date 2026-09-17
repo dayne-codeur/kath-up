@@ -14,6 +14,29 @@ function Cart({ closeCart }) {
   const currentCart = cart || [];
   const numericTotal = typeof cartTotal === "number" && !isNaN(cartTotal) ? cartTotal : 0;
 
+  // Numéro WhatsApp de Kath-Up (format international sans le +)
+  const WHATSAPP_NUMBER = "22900000000"; // ⚠️ Remplace par ton vrai numéro WhatsApp
+
+  const handleCheckout = () => {
+    if (currentCart.length === 0) return;
+
+    // Construction du récapitulatif des articles
+    let message = "Bonjour Kath-Up, je souhaite passer la commande suivante :\n\n";
+
+    currentCart.forEach((item) => {
+      const price = typeof item.price === "number" ? `${item.price.toFixed(2)} €` : `${item.price}`;
+      message += `• *${item.name}* (x${item.quantity}) - ${price}\n`;
+    });
+
+    message += `\n*Total : ${numericTotal.toFixed(2)} €*`;
+
+    // Redirection vers WhatsApp
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="cart-overlay" onClick={closeCart}>
       <aside className="cart-panel" onClick={(event) => event.stopPropagation()}>
@@ -83,7 +106,7 @@ function Cart({ closeCart }) {
                 <strong>{numericTotal.toFixed(2)} €</strong>
               </div>
 
-              <button className="checkout-button">
+              <button className="checkout-button" onClick={handleCheckout}>
                 Passer la commande
               </button>
 
